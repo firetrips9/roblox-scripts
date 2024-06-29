@@ -1,1 +1,164 @@
-loadstring(game:HttpGet("https://pastebin.com/raw/Qg5cmspH",true))()
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88 
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
+]=]
+
+-- Instances: 7 | Scripts: 2 | Modules: 0
+local G2L = {};
+
+-- StarterGui.firetrips9's Filter Bypasser
+G2L["1"] = Instance.new("ScreenGui", game.CoreGui);
+G2L["1"]["IgnoreGuiInset"] = true;
+G2L["1"]["DisplayOrder"] = 999999999;
+G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
+G2L["1"]["Name"] = [[firetrips9's Filter Bypasser]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
+
+-- StarterGui.firetrips9's Filter Bypasser.Frame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Size"] = UDim2.new(0, 285, 0, 137);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Position"] = UDim2.new(0.18040816485881805, 0, 0.31974920630455017, 0);
+
+-- StarterGui.firetrips9's Filter Bypasser.Frame.TextLabel
+G2L["3"] = Instance.new("TextLabel", G2L["2"]);
+G2L["3"]["TextWrapped"] = true;
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["TextScaled"] = true;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3"]["TextSize"] = 14;
+G2L["3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Text"] = [[firetrips9's Filter Bypasser]];
+G2L["3"]["BackgroundTransparency"] = 1;
+G2L["3"]["Position"] = UDim2.new(0.1473684161901474, 0, 0, 0);
+
+-- StarterGui.firetrips9's Filter Bypasser.Frame.TextBox
+G2L["4"] = Instance.new("TextBox", G2L["2"]);
+G2L["4"]["CursorPosition"] = -1;
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["TextSize"] = 14;
+G2L["4"]["TextWrapped"] = true;
+G2L["4"]["TextScaled"] = true;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(75, 75, 75);
+G2L["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4"]["PlaceholderText"] = [[Text 2 bypass]];
+G2L["4"]["Size"] = UDim2.new(0, 200, 0, 32);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Text"] = [[]];
+G2L["4"]["Position"] = UDim2.new(0.1473684161901474, 0, 0.36496350169181824, 0);
+G2L["4"]["ClearTextOnFocus"] = false;
+
+-- StarterGui.firetrips9's Filter Bypasser.Frame.TextButton
+G2L["5"] = Instance.new("TextButton", G2L["2"]);
+G2L["5"]["TextWrapped"] = true;
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["TextScaled"] = true;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(0, 171, 0);
+G2L["5"]["TextSize"] = 14;
+G2L["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Size"] = UDim2.new(0, 200, 0, 32);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Text"] = [[Let's swear at little kids begging for Robux!]];
+G2L["5"]["Position"] = UDim2.new(0.1473684161901474, 0, 0.7226277589797974, 0);
+
+-- StarterGui.firetrips9's Filter Bypasser.Frame.BypassScript
+G2L["6"] = Instance.new("LocalScript", G2L["2"]);
+G2L["6"]["Name"] = [[BypassScript]];
+
+-- StarterGui.firetrips9's Filter Bypasser.Frame.Dragify
+G2L["7"] = Instance.new("LocalScript", G2L["2"]);
+G2L["7"]["Name"] = [[Dragify]];
+
+-- StarterGui.firetrips9's Filter Bypasser.Frame.BypassScript
+local function C_6()
+local script = G2L["6"];
+	local function SWEARFONT(text)
+		local outputText = ""
+	
+		local conversions = {
+			["A"] = "🅰", ["B"] = "🅱", ["C"] = "🅲", ["D"] = "🅳", ["E"] = "🅴",
+			["F"] = "🅵", ["G"] = "🅶", ["H"] = "🅷", ["I"] = "🅸", ["J"] = "🅹",
+			["K"] = "🅺", ["L"] = "🅻", ["M"] = "🅼", ["N"] = "🅽", ["O"] = "🅾",
+			["P"] = "🅿", ["Q"] = "🆀", ["R"] = "🆁", ["S"] = "🆂", ["T"] = "🆃",
+			["U"] = "🆄", ["V"] = "🆅", ["W"] = "🆆", ["X"] = "🆇", ["Y"] = "🆈",
+			["Z"] = "🆉", ["a"] = "🅰", ["b"] = "🅱", ["c"] = "🅲", ["d"] = "🅳",
+			["e"] = "🅴", ["f"] = "🅵", ["g"] = "🅶", ["h"] = "🅷", ["i"] = "🅸",
+			["j"] = "🅹", ["k"] = "🅺", ["l"] = "🅻", ["m"] = "🅼", ["n"] = "🅽",
+			["o"] = "🅾", ["p"] = "🅿", ["q"] = "🆀", ["r"] = "🆁", ["s"] = "🆂",
+			["t"] = "🆃", ["u"] = "🆄", ["v"] = "🆅", ["w"] = "🆆", ["x"] = "🆇",
+			["y"] = "🆈", ["z"] = "🆉",
+		}
+	
+		for i = 1, #text do
+			local char = text:sub(i, i)
+			if conversions[char] then
+				outputText = outputText .. conversions[char]
+			else
+				outputText = outputText .. char
+			end
+		end
+	
+		return outputText
+	end
+	script.Parent.TextButton.Activated:Connect(function()
+		script.Parent.TextBox.Text = SWEARFONT(script.Parent.TextBox.Text)
+	end)
+	queueonteleport('loadstring(game:HttpGet("https://pastebin.com/raw/Qg5cmspH",true))()')
+end;
+task.spawn(C_6);
+-- StarterGui.firetrips9's Filter Bypasser.Frame.Dragify
+local function C_7()
+local script = G2L["7"];
+	local UIS = game:GetService("UserInputService")
+	function dragify(Frame)
+		dragToggle = nil
+		dragSpeed = 0.15
+		dragInput = nil
+		dragStart = nil
+		dragPos = nil
+		function updateInput(input)
+			Delta = input.Position - dragStart
+			Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+			game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.15), {Position = Position}):Play()
+		end
+		Frame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+				dragToggle = true
+				dragStart = input.Position
+				startPos = Frame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+		Frame.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+		game:GetService("UserInputService").InputChanged:Connect(function(input)
+			if input == dragInput and dragToggle then
+				updateInput(input)
+			end
+		end)
+	end
+	dragify(script.Parent)
+	
+end;
+task.spawn(C_7);
+
+return G2L["1"], require;
