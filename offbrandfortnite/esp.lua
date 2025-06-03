@@ -1,6 +1,7 @@
 local toggle = false
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
 local function addHighlightToCharacter(player, character)
     if player == LocalPlayer then return end
     local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
