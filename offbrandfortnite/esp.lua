@@ -1,3 +1,4 @@
+local toggle = false
 local function addHighlightToCharacter(player, character)
     if player == LocalPlayer then return end
     local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
@@ -25,7 +26,7 @@ local function updateHighlights()
     for _, player in pairs(Players:GetPlayers()) do
         local character = getCharacter(player)
         if character then
-            if _G.ESPToggle then
+            if toggle then
                 addHighlightToCharacter(player, character)
             else
                 removeHighlightFromCharacter(character)
@@ -49,3 +50,4 @@ Players.PlayerRemoving:Connect(function(playerRemoved)
         removeHighlightFromCharacter(character)
     end
 end)
+return toggle
